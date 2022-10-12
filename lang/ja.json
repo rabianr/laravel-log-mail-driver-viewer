@@ -1,0 +1,16 @@
+{
+    "Log Mail Viewer": "ログメールビューアー",
+    "Subject": "件名",
+    "To": "宛先",
+    "Date": "日時",
+    "From:": "差出人：",
+    "To:": "宛先：",
+    "Cc:": "Cc：",
+    "Bcc:": "Bcc：",
+    "Reply-To:": "返信先（Reply-To）：",
+    "Date:": "日時：",
+    "Attachments:": "添付ファイル：",
+    "D, j M Y H:i:s O": "Y/m/d D H:i",
+    "Text": "テキスト",
+    "No Mail Found": "メールがありません"
+}

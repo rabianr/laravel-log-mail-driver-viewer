@@ -1,0 +1,32 @@
+{
+    "name": "rabianr/laravel-log-mail-driver-viewer",
+    "description": "Provide a simple way to view mails logged by the log mail driver in browser.",
+    "authors": [
+        {
+            "name": "ラ・ビ・アン・ローズ"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2",
+        "zbateson/mail-mime-parser": "^2.2"
+    },
+    "require-dev": {
+        "laravel/framework": "^6",
+        "phpunit/phpunit": "^6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rabianr\\LogMailViewer\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rabianr\\LogMailViewer\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -64,12 +64,12 @@ class MailLogController extends Controller
         $date = $mailContent = '';
         $hasPrevPage = $hasNextPage = false;
 
-        foreach ($logfiles as $logfile) {
+        foreach ($logfiles as $i => $logfile) {
             $startCapturing = false;
             $lines = file(storage_path("logs/$logfile"), FILE_IGNORE_NEW_LINES);
             $_mails = [];
 
-            foreach ($lines as $line) {
+            foreach ($lines as $j => $line) {
                 if (! $startCapturing
                     && preg_match('/\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\]\[8fc7057844eb237dfaf44abb29f35465\]/', $line, $matches) === 1
                 ) {
@@ -81,7 +81,8 @@ class MailLogController extends Controller
 
                 if ($line === '<![[c00aac2fb70c7fb783d4707db1301d90]]>') {
                     $startCapturing = false;
-                    $_mails[ $date ] = $mailContent;
+                    $index = str_pad($i, 4, 0, STR_PAD_LEFT) . str_pad($j, 5, 0, STR_PAD_LEFT);
+                    $_mails[ "$date-$index" ] = $mailContent;
                     $date = $mailContent = '';
                     continue;
                 }
